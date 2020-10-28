@@ -1,30 +1,44 @@
 
 /*----- constants -----*/
 
-const BASE_URL = "https://the-office.p.rapidapi.com/1?rapidapi-key=3a776a8587mshb5a0763267e1f8ep177e80jsn31769ef05f15"
+const BASE_URL = "https://the-one-api.dev/v2/movie"
 /*----- app's state (variables) (data) -----*/
-let officeData; 
+let lotrData; 
 
 /*----- cached element references -----*/
 const $container = $('#container');
 
 
 /*----- event listeners -----*/
-$container.on('click', '.card', handleClick);
+$container.on('click', 'article.card', handleClick);
 
 
 /*----- functions -----*/
 
 //using AJAX here to get data
 function getData() {
-    $.ajax(BASE_URL).then(function(data) {
+    $.ajax({url: BASE_URL,headers:{Authorization: 'Bearer rnR526SUQ5_I9IhklT-P'}}).then(function(data) {
+       lotrData = data;
         console.log('Data: ', data);
+        render();
     }, function(error) {
        console.log('Error: ', error);
     });
 }
 
 function handleClick() {
-    alert('card was clicked');
+    alert('card clicked');
 }
 
+//mapping over object in data
+function render() {
+    const htmlArray = lotrData.docs.map(lotr => {
+        return`
+    <article class="card flex-ctr">
+        <h3>${lotr.name}</h3>
+    </article>
+    `;
+    });
+
+    $container.html(htmlArray);
+}

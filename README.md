@@ -1,6 +1,6 @@
-# The Office App
+# The Lord of the Rings App
 
-An application that displays The Office characters, quotes, episodes, and crew using The Office API 
+An application that displays The Lord of the Ring characters, quotes, and quotes using The One API 
 
 ## Technologies Used
 
@@ -21,6 +21,8 @@ An application that displays The Office characters, quotes, episodes, and crew u
 [Click Here](#) to see the deployed app!
 
 ## Obstacles
+- Changing APIs because of the CORS error
+- Figuring out where to put my access token to access all the data from my API
 
 
 
