@@ -4,15 +4,23 @@ An application that displays The Office characters, quotes, episodes, and crew u
 
 ## Technologies Used
 
--HTML 5
--CSS3
--JavaScript
--jQuery
--Google Fonts
--The Office API
+- HTML 5
+- CSS3
+- JavaScript
+- jQuery
+- Google Fonts
+- The Office API
 
 ## Screenshots
 ![Wireframe](imgs/Wireframe.png)
 ![Wireframe](imgs/CharacterCard:quotes.png)
 ![Wireframe](imgs/CrewCard.png)
 ![Wireframe](imgs/EpisodeCard.png)
+
+## Getting Started
+[Click Here](#) to see the deployed app!
+
+## Obstacles
+
+
+

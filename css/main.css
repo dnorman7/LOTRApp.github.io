@@ -46,10 +46,11 @@ main {
     border-radius: 12px;
     margin: 10px;
     box-shadow: 1px 1px 12px 5px black;
+    font-size: 25px;
 }
 
 .card:hover {
-    box-shadow: 1px 1px 15px 5px white;
+    box-shadow: 1px 1px 15px white;
 }
 
 #collection {
