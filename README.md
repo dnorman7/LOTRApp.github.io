@@ -1,6 +1,6 @@
 # The Lord of the Rings App
 
-An application that displays The Lord of the Ring characters, quotes, and quotes using The One API 
+An application that displays The Lord of the Ring movies and stats 
 
 ## Technologies Used
 
@@ -9,13 +9,11 @@ An application that displays The Lord of the Ring characters, quotes, and quotes
 - JavaScript
 - jQuery
 - Google Fonts
-- The Office API
+- The One API
 
 ## Screenshots
 ![Wireframe](imgs/Wireframe.png)
-![Wireframe](imgs/CharacterCard:quotes.png)
-![Wireframe](imgs/CrewCard.png)
-![Wireframe](imgs/EpisodeCard.png)
+![Wireframe](imgs/card.png)
 
 ## Getting Started
 [Click Here](#) to see the deployed app!
