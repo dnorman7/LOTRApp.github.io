@@ -1,10 +1,11 @@
-
 /*----- constants -----*/
 
 const BASE_URL = "https://the-one-api.dev/v2/movie"
 
 /*----- app's state (variables) (data) -----*/
-let lotrData; 
+//let lotrData; 
+
+let lotrData, lotrDetail;
 
 /*----- cached element references -----*/
 const $container = $('#container');
@@ -20,33 +21,82 @@ $container.on('click', 'article.card', handleClick);
 init();
 
 function init() {
-    getData()
+    getData();
 }
 
 //using AJAX here to get data
-function getData() {
-    $.ajax({url: BASE_URL,headers:{Authorization: 'Bearer rnR526SUQ5_I9IhklT-P'}}).then(function(data) {
-       lotrData = data;
-        console.log('Data: ', data);
-        render();
-    }, function(error) {
-       console.log('Error: ', error);
+function getData(detailInfo) {
+    console.log('detailInfo', detailInfo)
+    let Info;
+
+    if (detailInfo === undefined) {
+        url = BASE_URL
+    } else {
+        url = detailInfo;
+    }
+    // fetching data using AJAX
+    //
+    $.ajax({
+        url: BASE_URL,
+        headers: {
+            Authorization: 'Bearer rnR526SUQ5_I9IhklT-P'
+        }
+    }).then(function (data) {
+        if (detailInfo === undefined) {
+            lotrData = data;
+    
+            render();
+        } else {
+            lotrDetail = data;
+            //callig render to display Modal
+            render(true);
+        }
+
+    }, function (error) {
+        console.log('Error: ', error);
     });
+
 }
 
 function handleClick() {
-    alert('card clicked');
+    getData(this.dataset);
+}
+
+
+let myId = ""
+
+function getId (lotr) {
+   myId = lotr
 }
 
 //mapping over object in data
-function render() {
-    const htmlArray = lotrData.docs.map(lotr => {
-        return`
-    <article class="card flex-ctr">
-        <h3>${lotr.name}</h3>
-    </article>
-    `;
-    });
+function render(showModal) {
+    if(showModal === true) {
+    
+const singleData = lotrDetail.docs.find(name => name._id == myId)
 
-    $container.html(htmlArray);
+        //shows modal
+        const $modalContent = $(`
+            <p>Academy Award Wins: ${singleData.academyAwardWins}</p>
+            <p>Academy Award Nominations: ${singleData.academyAwardNominations}</p>
+            <p>Rotten Tomatos Score: ${singleData.rottenTomatesScore}</p>
+            <p>Runtime in Minutes: ${singleData.runtimeInMinutes}</p>
+        `);
+
+        const $modal = $('#lotrModal');
+        $modal.html($modalContent)
+        $modal.modal();
+
+    } else {
+        const htmlArray = lotrData.docs.map(lotr => {
+            return `
+        <article onclick='getId(${JSON.stringify(lotr._id)})'  data-info="${lotr.academyAwardWins}" class="card flex-ctr">
+            <h3>${lotr.name}</h3>
+        </article>
+        `;
+        });
+
+        $container.html(htmlArray);
+    }
+
 }
