@@ -2,6 +2,7 @@
 /*----- constants -----*/
 
 const BASE_URL = "https://the-one-api.dev/v2/movie"
+
 /*----- app's state (variables) (data) -----*/
 let lotrData; 
 
@@ -14,6 +15,13 @@ $container.on('click', 'article.card', handleClick);
 
 
 /*----- functions -----*/
+
+//Cards will show up without having to call getData() in console
+init();
+
+function init() {
+    getData()
+}
 
 //using AJAX here to get data
 function getData() {
