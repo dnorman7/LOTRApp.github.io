@@ -41,7 +41,7 @@ footer {
 
 main {
     flex-grow: 1;
-    background-image: url(https://static.wikia.nocookie.net/lotr/images/8/8b/DOiAi2WUEAE3A1Y.0.jpg/revision/latest?cb=20200305221819);
+    background-image: url(https://cdn.onebauer.media/one/empire-tmdb/films/120/images/pIUvQ9Ed35wlWhY2oU6OmwEsmzG.jpg?quality=50&width=1800&ratio=16-9&resizeStyle=aspectfill&format=jpg);
     background-color: var(--shadow-color);
     background-size: cover;
     background-position : center;
@@ -55,12 +55,12 @@ main {
     margin: 10px;
     box-shadow: 1px 1px 12px 5px black;
     font-size: 25px;
-    color: #daa638;
+    color: #e9b138;
     text-align: center;
 }
 
 .card:hover {
-    box-shadow: 1px 1px 15px white;
+    box-shadow: 1px 1px 15px var(--shadow-color);
 }
 
 #container {
@@ -77,6 +77,9 @@ main {
     align-items: center;
 }
 
-
+#lotrModal {
+    color: var(--shadow-color);
+    background: black;
+}
 
 
