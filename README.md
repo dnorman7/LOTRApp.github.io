@@ -16,7 +16,7 @@ An application that displays The Lord of the Ring movies and stats
 ![Wireframe](imgs/card.png)
 
 ## Getting Started
-[Click Here](#) to see the deployed app!
+[Click Here](https://dnorman7.github.io/LOTRApp.github.io/) to see the deployed app!
 
 ## Obstacles
 - Changing APIs because of the CORS error
